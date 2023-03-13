@@ -1,5 +1,10 @@
-console.log("Hello World");
-console.log("Hello ganesh");
+// Control Statement and Loops
 
-//  Section 3 Values and variables
-var fName = "Ganesh";
+if... else 
+switch statement 
+while loop 
+do-while loop
+for loop 
+for in loop 
+for of loop 
+conditional (ternary) operator

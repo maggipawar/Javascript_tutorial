@@ -36,12 +36,25 @@
 
 
 
-// 5) forEach()
+// 5) Array forEach()
+
+// The forEach() method calls a function for each element in an array.
+
+// The forEach() method is not executed for empty elements.
+
+// forEach() method return the undefined.
+
+// Syntax
+// array.forEach(function(currentValue, index, arr), thisValue)
 
 // const myFriendsName= ['Ganesh','Vaishali','laxmi','shruti'];
-// myFriendsName.forEach(function(Element,index,arry){
-//     console.log(Element,index,arry);
-// });
+
+// let arrElm = myFriendsName.forEach((element,index,arr)=>{
+//     return element;
+
+// })
+// console.log(myFriendsName);
+// console.log(arrElm);
 
 // 6) includes() method:
 
@@ -146,3 +159,64 @@
 // })
 
 // console.log(result);
+
+// 11) Array Map()
+// map() creates a new array from calling a function for every array element.
+
+// map() calls a function once for each element in an array.
+
+// map() does not execute the function for empty elements.
+
+// map() does not change the original array.
+
+// map() methods returns new array.
+
+
+// Syntax
+// array.map(function(currentValue, index, arr), thisValue)
+
+// 1) let marks= [25,49,64,81];
+
+// let arrElm = marks.map((element,index,arr)=>{
+//     return `Index no ${index} and the value is ${element} belongs to ${arr}`;
+// })
+// console.log(marks);
+// console.log(arrElm);
+
+// 2)
+
+// let marks= [25,49,64,81];
+
+// let sqrElm = marks.map((element)=>Math.sqrt(element));
+
+// console.log(sqrElm);
+
+// 3)
+
+// let arr = [2,3,4,6,8];
+
+// let arrMul = arr.map((curElm)=>curElm * 2).filter((curElm)=>curElm > 10);
+
+// console.log(arrMul);
+
+// 12) Array reduce()
+
+// The reduce() method executes a reducer function for array element.
+
+// The reduce() method returns a single value: the function's accumulated result.
+
+// The reduce() method does not execute the function for empty array elements.
+
+// The reduce() method does not change the original array.
+
+
+// Syntax
+// array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+
+// let arr = [5,7,8];
+
+// let sum = arr.reduce((accumlator, curElm)=>{
+//     debugger;
+//     return accumlator += curElm;
+// })
+// console.log(sum);

@@ -1,4 +1,3 @@
- <!-- Example of input Event onchange  -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,64 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
       .main_div {
-        background: #190994;
-        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #08aaa2;
         width: 100vw;
+        height: 100vh;
+        gap: 20px;
       }
 
-      .main_div label {
-        color: white;
+      .main_div span {
         font-size: 1.5rem;
-        margin-left: 10px;
+        font-family: "Times New Roman", Times, serif;
       }
 
-      #ice {
-        padding: 10px 20px;
-        margin: 20px;
-        /* color: white; */
+      
+      #btn {
+        padding: 15px 30px;
+        gap: 20px;
+        /* display: inline-block; */
       }
 
-      #ice_cream {
-        padding: 10px 20px;
-      }
-
-      #ice_cream option {
-        font-size: 1rem;
-      }
-
-      #result {
-        color: white;
-        margin: 20px auto;
-        font-size: 1.5rem;
-        text-align: center;
+      #Btn {
+        padding: 15px 30px;
       }
     </style>
   </head>
   <body>
+    <!-- setTimeout -->
+
+    <!-- <div class="main_div">
+      <p>Want to know my Name?</p>
+      <p id="showMyName"></p>
+      <br />
+      <button id="btn">Click Me</button>
+      <button id="Btn">Stop Me</button>
+    </div>
+     -->
+
+    <!-- setInterval -->
+
     <div class="main_div">
-      <label for="">Enter Your Name</label>
-      <input type="text" id="ice" />
+      <span>Increasing Count</span>
+      <span id="showMyName"></span>
       <br />
-      <br />
-      <label for="">Enter your Favourite Icecream</label>
-      <select name="iceCream" id="ice_cream" onchange="selectChange()">
-        <option value="">Select your choice</option>
-        <option value="chocklet">chocklet</option>
-        <option value="vanilla">vanilla</option>
-        <option value="butterscoch">butterscoch</option>
-        <option value="pista">pista</option>
-      </select>
-      <div id="result"></div>
+      <div class="wrap_btn">
+      <button id="btn">Click Me</button>
+      <button id="Btn">Stop Me</button>
+    </div>
     </div>
 
     <script>
-      const selectChange = () => {
-        const selectIce = document.getElementById("ice").value;
-        const iceCream = document.getElementById("ice_cream").value;
-        const result = document.getElementById("result");
-        result.innerHTML = `Mr. ${selectIce} selecte ${iceCream} flavour `;
+      // ** setTimeout ** //
+
+      //   const showName = document.querySelector("#showMyName");
+      //   const btn = document.querySelector("#btn");
+
+      //   let setRef;
+
+      //   const showNameOnly = () => {
+      //     showName.innerHTML = `Loading.....`;
+      //     setRef = setTimeout(() => {
+      //         showName.innerHTML = `My Name is Ganesh`;
+      //     }, 2000);
+      //   };
+
+      //   btn.addEventListener("click", showNameOnly);
+
+      //   Btn.addEventListener('click',()=> {
+      //     clearTimeout(setRef);
+      //   })
+
+      // ** setTimeInterval ** //
+
+      const showName = document.querySelector("#showMyName");
+      const btn = document.querySelector("#btn");
+
+      let setRef;
+      let num = 0;
+
+      const showNameOnly = () => {
+        showName.innerHTML = `Loading.....`;
+        setRef = setInterval(() => {
+          showName.innerHTML = `${num}`;
+          num++;
+        }, 1000);
       };
+
+      btn.addEventListener("click", showNameOnly);
+
+      Btn.addEventListener("click", () => {
+        clearInterval(setRef);
+      });
     </script>
   </body>
 </html>

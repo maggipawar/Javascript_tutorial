@@ -28,3 +28,11 @@
 
 // 4) InputEvent in javascript
 
+
+
+// ** Timimg Based Events in Javascript** //
+
+// 1) setTimeout
+// 2) clearTimeout
+// 3) setInterval
+// 4) clearInterval

@@ -13,8 +13,6 @@
 // 4) InputEvent in javascript
 
 
-
-
 // 2) MouseEvent in javascript
 
 // i) mouseUp()
@@ -22,5 +20,11 @@
 // iii)mouseenter()
 // iv) mouseleave()
 
+// 3) KeyboardEvent in javascript
 
+// i) onkeyup()
+// ii) onkeydown()
+// iii) onkeypress()
+
+// 4) InputEvent in javascript
 

@@ -1,3 +1,4 @@
+ <!-- Example of input Event onchange  -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,68 +7,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      a {
-        text-decoration: none;
-        text-transform: capitalize;
+      .main_div {
+        background: #190994;
+        height: 100vh;
+        width: 100vw;
       }
 
-      .main_container {
-        background: #000;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+      .main_div label {
+        color: white;
+        font-size: 1.5rem;
+        margin-left: 10px;
       }
-      .same_design p {
-        background: yellow;
-        padding: 20px 40px;
+
+      #ice {
+        padding: 10px 20px;
         margin: 20px;
-        border-radius: 10px;
+        /* color: white; */
+      }
+
+      #ice_cream {
+        padding: 10px 20px;
+      }
+
+      #ice_cream option {
+        font-size: 1rem;
+      }
+
+      #result {
+        color: white;
+        margin: 20px auto;
+        font-size: 1.5rem;
+        text-align: center;
       }
     </style>
   </head>
   <body>
-    <div class="main_container">
-      <a
-        href="#"
-        class="same_design"
-        id="first_way"
-        onclick="alert
-              (`This is the first way Event`)"
-      >
-        <p>Normal alert Event</p>
-      </a>
-      <a href="#" class="same_design" id="second_way" onclick="secondWay()">
-        <p>Function Event</p>
-      </a>
-      <a href="#" class="same_design">
-        <p id="third_way">Third way Event</p>
-      </a>
-      <a href="#" class="same_design" id="fourth_way">
-        <p>Fourth way Event</p>
-      </a>
+    <div class="main_div">
+      <label for="">Enter Your Name</label>
+      <input type="text" id="ice" />
+      <br />
+      <br />
+      <label for="">Enter your Favourite Icecream</label>
+      <select name="iceCream" id="ice_cream" onchange="selectChange()">
+        <option value="">Select your choice</option>
+        <option value="chocklet">chocklet</option>
+        <option value="vanilla">vanilla</option>
+        <option value="butterscoch">butterscoch</option>
+        <option value="pista">pista</option>
+      </select>
+      <div id="result"></div>
     </div>
 
     <script>
-      /// 2nd way of wrintting Event
-
-      const secondWay = () => {
-        alert(`This is the second way Event`);
+      const selectChange = () => {
+        const selectIce = document.getElementById("ice").value;
+        const iceCream = document.getElementById("ice_cream").value;
+        const result = document.getElementById("result");
+        result.innerHTML = `Mr. ${selectIce} selecte ${iceCream} flavour `;
       };
-
-      /// 3rd way of wrintting Event
-
-      const thirdWay = document.getElementById("third_way");
-      thirdWay.onclick = () => {
-        alert("This is third way of Event");
-      };
-
-      /// 4th way of wrintting Event
-
-      const fourthWay = document.querySelector("#fourth_way");
-      fourthWay.addEventListener("click", () => {
-        alert(`This is the fourth way Event`);
-      });
     </script>
   </body>
 </html>

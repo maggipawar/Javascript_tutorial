@@ -1,63 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        .main_container {
-            background: #1db363;
-            color: aliceblue;
-        }
+      a {
+        text-decoration: none;
+        text-transform: capitalize;
+      }
 
-        .child_one{
-            background: #000;
-            color: aliceblue;
-        }
-        
-        .child_two{
-            background: #2757bd;
-            color: aliceblue;
-        }
-        
-        .child_three{
-            background: #cd410a;
-            color: aliceblue;
-        }
-        button{
-            padding: 10px 20px;
-            display: flex;
-            margin: 20px auto;
-            cursor: pointer;
-            transform: scale(1.05);
-            transition: 2s ease-in-out;
-        }
-        button:hover{
-            transform: scale(1.05);
-            transition: 3s ease-in-out;
-        }
+      .main_container {
+        background: #000;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      .same_design p {
+        background: yellow;
+        padding: 20px 40px;
+        margin: 20px;
+        border-radius: 10px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main_container">
-        <div class="child_one">
-            <p>I am child one</p>
-        </div>
-        <div class="child_two">
-            <p>I am child two</p>
-        </div>
-        <div id="child_three">
-            <p>I am child three</p>
-        </div>
-        <button onclick="changeMe()">Click Me</button>
+      <a
+        href="#"
+        class="same_design"
+        id="first_way"
+        onclick="alert
+              (`This is the first way Event`)"
+      >
+        <p>Normal alert Event</p>
+      </a>
+      <a href="#" class="same_design" id="second_way" onclick="secondWay()">
+        <p>Function Event</p>
+      </a>
+      <a href="#" class="same_design">
+        <p id="third_way">Third way Event</p>
+      </a>
+      <a href="#" class="same_design" id="fourth_way">
+        <p>Fourth way Event</p>
+      </a>
     </div>
-    <script>
 
-        const changeMe = () =>{
-            document.getElementById('child_three').innerHTML = "Hello World";
-        }
-        
+    <script>
+      /// 2nd way of wrintting Event
+
+      const secondWay = () => {
+        alert(`This is the second way Event`);
+      };
+
+      /// 3rd way of wrintting Event
+
+      const thirdWay = document.getElementById("third_way");
+      thirdWay.onclick = () => {
+        alert("This is third way of Event");
+      };
+
+      /// 4th way of wrintting Event
+
+      const fourthWay = document.querySelector("#fourth_way");
+      fourthWay.addEventListener("click", () => {
+        alert(`This is the fourth way Event`);
+      });
     </script>
-</body>
+  </body>
 </html>

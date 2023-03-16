@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main_container {
+            background: #1db363;
+            color: aliceblue;
+        }
+
+        .child_one{
+            background: #000;
+            color: aliceblue;
+        }
+        
+        .child_two{
+            background: #2757bd;
+            color: aliceblue;
+        }
+        
+        .child_three{
+            background: #cd410a;
+            color: aliceblue;
+        }
+        button{
+            padding: 10px 20px;
+            display: flex;
+            margin: 20px auto;
+            cursor: pointer;
+            transform: scale(1.05);
+            transition: 2s ease-in-out;
+        }
+        button:hover{
+            transform: scale(1.05);
+            transition: 3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_container">
+        <div class="child_one">
+            <p>I am child one</p>
+        </div>
+        <div class="child_two">
+            <p>I am child two</p>
+        </div>
+        <div id="child_three">
+            <p>I am child three</p>
+        </div>
+        <button onclick="changeMe()">Click Me</button>
+    </div>
+    <script>
+
+        const changeMe = () =>{
+            document.getElementById('child_three').innerHTML = "Hello World";
+        }
+        
+    </script>
+</body>
+</html>
